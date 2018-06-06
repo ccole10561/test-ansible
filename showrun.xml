@@ -1,0 +1,11 @@
+---
+- name: GET SHOW VER
+  hosts: cfc-rack-admin-rtr
+
+  tasks:
+   - name: run show version on ios device
+     ios_command:
+       commands: show run
+     register: output
+   - debug:
+       msg: "{{ output }}"
